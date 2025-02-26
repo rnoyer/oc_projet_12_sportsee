@@ -1,0 +1,30 @@
+.card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "icon value"
+        "icon category";
+    padding: 32px;
+    column-gap: 24px;
+}
+
+.card-icon {
+    grid-area: icon;
+    width: 60px;
+    aspect-ratio: 1 / 1;
+}
+
+.card-value {
+    grid-area: value;
+    font-size: 20px;
+    font-weight: 700;
+    margin: auto 0;
+}
+
+.card-category {
+    grid-area: category;
+    font-size: 14px;
+    font-weight: 500;
+    color: #74798C;
+    margin: auto 0;
+}

@@ -1,0 +1,38 @@
+.dash {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    grid-template-areas:
+        "hero   hero    hero    hero"
+        "bar    bar     bar     cards"
+        "line   radar   radial  cards";
+    padding: 90px 65px;
+
+    &--hero {
+        grid-area: hero;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &--bar-chart {
+        grid-area: bar;
+    }
+
+    &--line-chart {
+        grid-area: line;
+    }
+
+    &--radar-chart {
+        grid-area: radar;
+    }
+
+    &--radial-chart {
+        grid-area: radial;
+    }
+
+    &--cards {
+        grid-area: cards;
+    }
+
+
+}

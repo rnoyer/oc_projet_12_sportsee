@@ -1,0 +1,21 @@
+#root {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+  "head head"
+  "side dash"; 
+  min-height: 100vh; 
+}
+
+.header {
+  grid-area: head;
+}
+
+.sidebar {
+  grid-area: side;
+}
+
+.dash {
+  grid-area: dash;
+}
