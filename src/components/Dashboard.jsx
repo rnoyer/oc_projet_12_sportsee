@@ -1,30 +1,28 @@
 import "./Dashboard.scss";
-import Hero from './Hero'
+import Hero from "./Hero";
 import Card from "./Card";
 import Barchart from "./Barchart";
 import fire from "../assets/icons/fire.svg";
 import chicken from "../assets/icons/chicken.svg";
 import apple from "../assets/icons/apple.svg";
 import burger from "../assets/icons/burger.svg";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useParams } from "react-router";
+import { useUserInfos } from "../hooks/useUserInfos";
 
 function Dashboard() {
+  const params = useParams();
+  const {
+    calorieCount,
+    proteinCount,
+    carbohydrateCount,
+    lipidCount,
+    getUserInfos,
+  } = useUserInfos(params.userId);
 
-  // const [calorieCount, setFirstName] = useState()
-  // const [proteinCount, setProteinCount] = useState()
-  // const [carboCount, setCarboCount] = useState()
-  // const [lipidCount, setLipidCount] = useState()
-  
-  // useEffect(() => {
-  //   const response
-  // })
-
-  const calorieCount = 1930;
-  const proteinCount = 1930;
-  const carboCount = 1930;
-  const lipidCount = 1930;
-
-
+  useEffect(() => {
+    getUserInfos();
+  }, []);
 
   return (
     <div className="dash">
@@ -53,7 +51,7 @@ function Dashboard() {
           bgColor="#4AB8FF"
         />
         <Card
-          value={carboCount}
+          value={carbohydrateCount}
           unit="g"
           category="Glucides"
           iconPath={apple}
