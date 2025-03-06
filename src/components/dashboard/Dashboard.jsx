@@ -19,12 +19,12 @@ import { usePerformanceInfos } from "../../hooks/usePerformanceInfos";
 function Dashboard() {
   const params = useParams();
   const {
+    todayScore,
     calorieCount,
     proteinCount,
     carbohydrateCount,
     lipidCount,
     getUserInfos,
-    todayScore,
   } = useUserInfos(params.userId);
   const { activitySessions, getActivityInfos } = useActivityInfos(
     params.userId
@@ -51,14 +51,15 @@ function Dashboard() {
       <div className="dash--bar-chart">
         <Barchart sessionsData={activitySessions} />
       </div>
-      <div className="dash--line-chart">
-        <LineChart sessionsData={averageSessions} />
+      <div className="dash--line-chart squared-chart">
+        <p className="line-chart-title">Durée moyenne des <br />sessions</p>
+        <LineChart sessionsData={averageSessions} className="line-chart" />
       </div>
-      <div className="dash--radar-chart">
+      <div className="dash--radar-chart squared-chart">
         <RadarChart performancesData={performanceInfos} />
       </div>
-      <div className="dash--radial-chart">
-        <RadialChart score={todayScore} />
+      <div className="dash--radial-chart squared-chart">
+        <RadialChart scoreData={todayScore} />
       </div>
       <div className="dash--cards">
         <Card

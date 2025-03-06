@@ -5,13 +5,15 @@
         "hero   hero    hero    hero"
         "bar    bar     bar     cards"
         "line   radar   radial  cards";
-    padding: 90px 65px;
+    padding: 60px 90px;
+    gap: 30px;
 
     &--hero {
         grid-area: hero;
         display: flex;
         flex-direction: column;
         gap: 40px;
+        margin-bottom: 40px;
     }
 
     &--bar-chart {
@@ -20,10 +22,26 @@
 
     &--line-chart {
         grid-area: line;
+        display: flex;
+        flex-direction: column;
+        background-color: #FF0000;
+        border-radius: 5px;
+    }
+    .line-chart-title {
+        font-weight: 500;
+        color: #FFFFFF;
+        opacity: 50%;
+        line-height: 24px;
+        margin: 30px;
+    }
+    .line-chart {
+        flex: 1;
     }
 
     &--radar-chart {
         grid-area: radar;
+        background-color: #282D30;
+        border-radius: 5px;
     }
 
     &--radial-chart {
@@ -32,7 +50,13 @@
 
     &--cards {
         grid-area: cards;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-
+    .squared-chart {
+        max-width: 258px;
+        max-height: 263px;
+    }
 }

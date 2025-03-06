@@ -9,6 +9,7 @@ import {
 
 function RadarChart({ performancesData }) {
   const data = performancesData?.data;
+
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
@@ -17,9 +18,9 @@ function RadarChart({ performancesData }) {
           <PolarAngleAxis dataKey="kind"/>
           <Radar
             dataKey="value"
-            stroke="#8884d8"
-            fill="#8884d8"
-            fillOpacity={0.6}
+            stroke="#FF0000"
+            fill="#FF0000"
+            fillOpacity={0.7}
           />
         </Chart>
       </ResponsiveContainer>

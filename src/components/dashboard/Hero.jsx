@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 
 function Hero() {
   const params = useParams()
-  const { user, getUserInfos } = useUserInfos(params.userId);
+  const { userName, getUserInfos } = useUserInfos(params.userId);
 
   useEffect(() => {
     getUserInfos();
@@ -14,7 +14,7 @@ function Hero() {
   return (
     <>
       <h1 className="hello-msg">
-        Bonjour <span className="firstname">{user}</span>
+        Bonjour <span className="firstname">{userName}</span>
       </h1>
       <p className="support-msg">
         Félicitation ! Vous avez explosé vos objectifs hier 👏
