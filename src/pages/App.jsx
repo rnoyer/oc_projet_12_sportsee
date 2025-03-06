@@ -1,7 +1,7 @@
 import './App.scss'
-import Header from '../components/Header'
-import Sidebar from '../components/Sidebar'
-import Dashboard from '../components/Dashboard'
+import Header from '/src/components/dashboard/Header'
+import Sidebar from '/src/components/dashboard/Sidebar'
+import Dashboard from '/src/components/dashboard/Dashboard'
 import { useParams } from 'react-router'
 
 function App() {

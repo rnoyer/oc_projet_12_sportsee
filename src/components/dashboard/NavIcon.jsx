@@ -1,5 +1,4 @@
 import './NavIcon.scss'
-import { Link } from 'react-router'
 
 function NavIcon( {iconPath, bgColor, iconSize = 'small'} ) {
   const colorWithOpacity = bgColor ? `${bgColor}1A` : '#FFFFFF'

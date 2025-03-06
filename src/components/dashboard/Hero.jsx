@@ -1,6 +1,6 @@
 import "./Hero.scss";
 import { useEffect } from "react";
-import { useUserInfos } from "../hooks/useUserInfos";
+import { useUserInfos } from "/src/hooks/useUserInfos";
 import { useParams } from "react-router";
 
 function Hero() {

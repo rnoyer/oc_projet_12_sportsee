@@ -1,13 +1,10 @@
 import "./Sidebar.scss";
 import { Link } from "react-router";
 import NavIcon from "./NavIcon";
-import zen from "../assets/icons/zen.svg";
-import swim from "../assets/icons/swim.svg";
-import bike from "../assets/icons/bike.svg";
-import alter from "../assets/icons/alter.svg";
-import { useParams } from "react-router";
-import { useEffect } from "react";
-import { useUserInfos } from "../hooks/useUserInfos";
+import zen from "/src/assets/icons/zen.svg";
+import swim from "/src/assets/icons/swim.svg";
+import bike from "/src/assets/icons/bike.svg";
+import alter from "/src/assets/icons/alter.svg";
 
 function Sidebar() {
 
