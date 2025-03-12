@@ -2,9 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr auto;
     grid-template-areas:
-        "hero   hero    hero    hero"
-        "bar    bar     bar     cards"
-        "line   radar   radial  cards";
+        "hero       hero    hero    hero"
+        "bar        bar     bar     cards"
+        "squared    squared squared cards";
     padding: 60px 90px;
     gap: 30px;
 
@@ -20,32 +20,46 @@
         grid-area: bar;
     }
 
+    .squared-chart-container{
+        grid-area: squared;
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+
+        .squared-chart {
+            max-width: 258px;
+            max-height: 263px;
+        }
+
+        .line-chart-title {
+            font-weight: 500;
+            color: #FFFFFF;
+            opacity: 50%;
+            line-height: 24px;
+            margin: 30px;
+        }
+        .line-chart {
+            flex: 1;
+        }
+    }
+
     &--line-chart {
-        grid-area: line;
+        flex: 1;
         display: flex;
         flex-direction: column;
         background-color: #FF0000;
         border-radius: 5px;
     }
-    .line-chart-title {
-        font-weight: 500;
-        color: #FFFFFF;
-        opacity: 50%;
-        line-height: 24px;
-        margin: 30px;
-    }
-    .line-chart {
-        flex: 1;
-    }
+
 
     &--radar-chart {
-        grid-area: radar;
+        flex: 1;
         background-color: #282D30;
         border-radius: 5px;
     }
 
     &--radial-chart {
-        grid-area: radial;
+        flex: 1;
     }
 
     &--cards {
@@ -53,10 +67,5 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-
-    .squared-chart {
-        max-width: 258px;
-        max-height: 263px;
     }
 }

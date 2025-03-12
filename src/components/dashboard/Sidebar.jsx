@@ -11,10 +11,10 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <nav className="sidebar-nav">
-        <Link to="#">
+        <Link reloadDocument to="/dashboard/12">
           <NavIcon iconPath={zen} iconSize="small" />
         </Link>
-        <Link to="#">
+        <Link reloadDocument to="/dashboard/18">
           <NavIcon iconPath={swim} iconSize="small" />
         </Link>
         <Link to="#">

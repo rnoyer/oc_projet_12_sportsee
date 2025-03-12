@@ -8,14 +8,13 @@ import {
 } from "recharts";
 
 function RadarChart({ performancesData }) {
-  const data = performancesData?.data;
 
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
-        <Chart data={data}>
+        <Chart data={performancesData}>
           <PolarGrid />
-          <PolarAngleAxis dataKey="kind"/>
+          <PolarAngleAxis dataKey="kind" tick={{ fill: "white", fontSize: 15 }} />
           <Radar
             dataKey="value"
             stroke="#FF0000"

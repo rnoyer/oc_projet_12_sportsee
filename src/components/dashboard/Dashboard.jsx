@@ -51,15 +51,20 @@ function Dashboard() {
       <div className="dash--bar-chart">
         <Barchart sessionsData={activitySessions} />
       </div>
-      <div className="dash--line-chart squared-chart">
-        <p className="line-chart-title">Durée moyenne des <br />sessions</p>
-        <LineChart sessionsData={averageSessions} className="line-chart" />
-      </div>
-      <div className="dash--radar-chart squared-chart">
-        <RadarChart performancesData={performanceInfos} />
-      </div>
-      <div className="dash--radial-chart squared-chart">
-        <RadialChart scoreData={todayScore} />
+      <div className="squared-chart-container">
+        <div className="dash--line-chart squared-chart">
+          <p className="line-chart-title">
+            Durée moyenne des <br />
+            sessions
+          </p>
+          <LineChart sessionsData={averageSessions} className="line-chart" />
+        </div>
+        <div className="dash--radar-chart squared-chart">
+          <RadarChart performancesData={performanceInfos} />
+        </div>
+        <div className="dash--radial-chart squared-chart">
+          <RadialChart scoreData={todayScore} />
+        </div>
       </div>
       <div className="dash--cards">
         <Card
