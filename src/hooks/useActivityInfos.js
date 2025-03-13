@@ -1,21 +1,26 @@
 import { useState } from "react";
+import { getDataActivityInfos } from "../services/getDataActivityInfos";
 
 export function useActivityInfos(userId) {
+  const [activitySessions, setActivitySessions] = useState();
 
-    const [activitySessions, setActivitySessions] = useState()
+  const getActivityInfos = async () => {
+    const data = await getDataActivityInfos(userId);
+    const formattedData = []
 
-    const getActivityInfos = async () => {
-        const url = `http://localhost:3000/user/${userId}/activity`
-        const response = await fetch(url)
-        const data = await response.json()
+    const activity = data.data.sessions;
 
-        const activity = data.data.sessions
-        activity.forEach(element => {
-            delete Object.assign(element, {["Poids (kg)"]: element["kilogram"]})["kilogram"]
-            delete Object.assign(element, {["Calories brûlées (kCal)"]: element["calories"]})["calories"]
-        });
+    activity.forEach((element) => {
+        const tempObject = {}
 
-        setActivitySessions(activity)
-    }
-    return {activitySessions, getActivityInfos}
+        tempObject["Poids (kg)"] = element.kilogram
+        tempObject["Calories brûlées (kCal)"] = element.calories
+        tempObject.day = element.day
+
+        formattedData.push(tempObject)
+    });
+
+    setActivitySessions(formattedData);
+  };
+  return { activitySessions, getActivityInfos };
 }

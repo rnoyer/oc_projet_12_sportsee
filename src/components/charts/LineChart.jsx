@@ -20,13 +20,15 @@ function LineChart({ sessionsData, className }) {
             tickLine={false}
             padding={{ left: 10, right: 10 }}
           />
+          <YAxis dataKey="sessionLength" hide={true} />
+          <Tooltip />
           <Line
             dataKey="sessionLength"
             stroke="#FFFFFF"
             type="monotone"
             strokeWidth={2}
+            dot={false}
           />
-          <Tooltip />
         </Chart>
       </ResponsiveContainer>
     </div>

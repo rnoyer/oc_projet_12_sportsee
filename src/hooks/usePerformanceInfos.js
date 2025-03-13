@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { getDataPerformanceInfos } from "../services/getDataPerformanceInfos";
 
 export function usePerformanceInfos(userId) {
 
     const [performanceInfos, setPerformanceInfos] = useState()
 
     const getPerformanceInfos = async () => {
-        const url = `http://localhost:3000/user/${userId}/performance`
-        const response = await fetch(url)
-        const data = await response.json()
+        const data = await getDataPerformanceInfos(userId)
         const formattedData = []
 
         for(const [key, kind] of Object.entries(data.data.kind)) {

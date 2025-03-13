@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getDataUserInfos } from "../services/getDataUserInfos";
 
 export function useUserInfos(userId) {
   const [userName, setUserName] = useState();
@@ -16,9 +17,8 @@ export function useUserInfos(userId) {
   ];
 
   const getUserInfos = async () => {
-    const url = `http://localhost:3000/user/${userId}`;
-    const response = await fetch(url);
-    const data = await response.json();
+
+    const data = await getDataUserInfos(userId)
     const scoreAmount = data.data.todayScore || data.data.score;
 
     scoreData[0].todayScore = scoreAmount * 100;
