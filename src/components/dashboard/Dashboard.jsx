@@ -53,10 +53,6 @@ function Dashboard() {
       </div>
       <div className="squared-chart-container">
         <div className="dash--line-chart squared-chart">
-          <p className="line-chart-title">
-            Durée moyenne des <br />
-            sessions
-          </p>
           <LineChart sessionsData={averageSessions} className="line-chart" />
         </div>
         <div className="dash--radar-chart squared-chart">

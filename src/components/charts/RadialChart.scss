@@ -1,0 +1,11 @@
+.radial-chart{
+    flex: 1;
+    display: grid;
+    &--title{
+        grid-area: 1 / 1;
+        margin: 16px;
+    }
+    .recharts-wrapper{
+        grid-area: 1 / 1;
+    }
+}

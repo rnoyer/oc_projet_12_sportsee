@@ -30,23 +30,10 @@
             max-width: 258px;
             max-height: 263px;
         }
-
-        .line-chart-title {
-            font-weight: 500;
-            color: #FFFFFF;
-            opacity: 50%;
-            line-height: 24px;
-            margin: 30px;
-        }
-        .line-chart {
-            flex: 1;
-        }
     }
 
     &--line-chart {
         flex: 1;
-        display: flex;
-        flex-direction: column;
         background-color: #FF0000;
         border-radius: 5px;
     }

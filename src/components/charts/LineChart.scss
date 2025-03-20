@@ -1,0 +1,18 @@
+.line-chart {
+    height: 60%;
+    &--title {
+        font-weight: 500;
+        color: #FFFFFF;
+        opacity: 50%;
+        line-height: 24px;
+        margin: 30px;
+    }
+    &--chart{
+        flex: 1;
+    }
+}
+
+.linechart-custom-tooltip{
+    background-color: white;
+    padding: 7px;
+}
