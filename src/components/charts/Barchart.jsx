@@ -51,7 +51,7 @@ function Barchart({ sessionsData }) {
             tickLine={false}
             padding={{ top: 20 }}
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip />} cursor={{fill: '#C4C4C480'}} />
 
           <Bar
             radius={[90, 90, 0, 0]}

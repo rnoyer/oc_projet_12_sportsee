@@ -46,6 +46,7 @@ function RadialChart({ scoreData }) {
           innerRadius="100%"
           barSize={10}
           data={scoreData}
+          className={"radial-chart--chart"}
         >
           <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
           <RadialBar

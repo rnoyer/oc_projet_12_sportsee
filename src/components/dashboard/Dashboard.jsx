@@ -53,7 +53,7 @@ function Dashboard() {
       </div>
       <div className="squared-chart-container">
         <div className="dash--line-chart squared-chart">
-          <LineChart sessionsData={averageSessions} className="line-chart" />
+          <LineChart sessionsData={averageSessions} />
         </div>
         <div className="dash--radar-chart squared-chart">
           <RadarChart performancesData={performanceInfos} />

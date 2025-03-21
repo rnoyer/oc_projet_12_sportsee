@@ -2,6 +2,9 @@
     font-size: 48px;
     font-weight: 500;
     margin: unset;
+    @media(max-width: 1280px) {
+        font-size: 42px;
+    }
 }
 
 .firstname {

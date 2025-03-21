@@ -8,6 +8,10 @@
     column-gap: 24px;
     background-color: #FBFBFB;
     border-radius: 5px;
+    @media(max-width:1280px){
+        padding: 16px;
+        column-gap: 12px;
+    }
 }
 
 .card-icon {
