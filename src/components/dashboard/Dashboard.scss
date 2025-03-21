@@ -18,6 +18,9 @@
 
     &--bar-chart {
         grid-area: bar;
+        background-color: #FBFBFB;
+        padding: 24px;
+        border-radius: 5px;
     }
 
     .squared-chart-container{
@@ -47,6 +50,8 @@
 
     &--radial-chart {
         flex: 1;
+        background-color: #FBFBFB;
+        border-radius: 5px;
     }
 
     &--cards {

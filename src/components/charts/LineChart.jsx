@@ -6,50 +6,65 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  ReferenceArea
+  ReferenceArea,
+  Rectangle,
 } from "recharts";
 
 function CustomTooltip(props) {
-  console.log(props)
-  const sessionData = props.payload[0]?.value + " min"
+  const sessionData = props.payload[0]?.value + " min";
 
   if (props.active) {
-    console.log(props)
-    return(
+    return (
       <div className="linechart-custom-tooltip">
-      <p>{sessionData}</p>
+        <p>{sessionData}</p>
       </div>
-    )
+    );
   }
 
-  return null
+  return null;
 }
+
+const CustomCursor = (props) => {
+  const { points, width } = props;
+  const { x } = points[0]; 
+  return <Rectangle fill="#0000001A" x={x} y={0} width={width} height={500} />;
+};
 
 function LineChart({ sessionsData }) {
   return (
     <div className="line-chart">
-      <p className="line-chart--title">
-        Durée moyenne des <br />
-        sessions
-      </p>
-      <ResponsiveContainer width="100%" height="100%" className="line-chart--chart" >
-        <Chart data={sessionsData}>
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        className="line-chart--container"
+      >
+        <p className="line-chart--title">
+          Durée moyenne des <br />
+          sessions
+        </p>
+        <Chart data={sessionsData} height={100} className="line-chart--chart">
+          <defs>
+            <linearGradient id="lineColor">
+              <stop offset="0%" stopColor="#FFFFFF67" />
+              <stop offset="100%" stopColor="#FFFFFF" />
+            </linearGradient>
+          </defs>
           <XAxis
             dataKey="day"
             axisLine={false}
             tickLine={false}
             padding={{ left: 10, right: 10 }}
+            tick={{ fill: "#FFFFFF80" }}
           />
-          <YAxis dataKey="sessionLength" hide={true} />
-          <Tooltip content={<CustomTooltip />} />
+          <YAxis dataKey="sessionLength" hide={true} padding={{ top: 100 }} />
+          <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
           <Line
             dataKey="sessionLength"
-            stroke="#FFFFFF"
-            type="natural"
+            stroke="url(#lineColor)"
+            type="monotone"
             strokeWidth={2}
             dot={false}
           />
-          <ReferenceArea />
         </Chart>
       </ResponsiveContainer>
     </div>

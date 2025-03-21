@@ -60,21 +60,3 @@ function RadialChart({ scoreData }) {
 }
 
 export default RadialChart;
-
-// {
-//   "offset": 5,
-//   "name": "Score",
-//   "fill": "#FF0000",
-//   "cx": 102,
-//   "cy": 131.5,
-//   "value": 80,
-//   "viewBox": {
-//       "cx": 102,
-//       "cy": 131.5,
-//       "startAngle": 90,
-//       "endAngle": 378,
-//       "innerRadius": 42.95,
-//       "outerRadius": 52.95
-//   },
-//   "index": 0
-// }

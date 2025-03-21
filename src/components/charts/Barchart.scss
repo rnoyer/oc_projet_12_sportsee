@@ -3,3 +3,18 @@
     background-color: #E60000;
     padding: 12px;
 }
+
+.bar-chart{
+    display: grid;
+    &--title {
+        grid-area: 1 / 1;
+        margin: 0;
+    }
+    &--chart {
+        grid-area: 1 / 1;
+    }
+}
+
+.recharts-cartesian-grid-horizontal line:last-child{
+    stroke-opacity: 0;
+}

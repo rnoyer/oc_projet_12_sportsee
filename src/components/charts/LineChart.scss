@@ -1,18 +1,22 @@
 .line-chart {
-    height: 60%;
+    height: 100%;
+    &--container{
+        flex: 1;
+        display: grid;
+    }
     &--title {
+        grid-area: 1 / 1;
         font-weight: 500;
-        color: #FFFFFF;
-        opacity: 50%;
+        color: #FFFFFF80;
         line-height: 24px;
         margin: 30px;
     }
-    &--chart{
-        flex: 1;
+    &--chart {
+        grid-area: 1 / 1;
     }
 }
 
 .linechart-custom-tooltip{
     background-color: white;
-    padding: 7px;
+    padding: 0.5px 7px;
 }

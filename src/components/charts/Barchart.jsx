@@ -11,26 +11,27 @@ import {
 } from "recharts";
 
 function CustomTooltip(props) {
-  const kgData = props.payload[0]?.value + "kg"
-  const kCalData = props.payload[1]?.value + "kCal"
+  const kgData = props.payload[0]?.value + "kg";
+  const kCalData = props.payload[1]?.value + "kCal";
 
   if (props.active) {
-    return(
+    return (
       <div className="custom-tooltip">
-      <p>{kgData}</p>
-      <p>{kCalData}</p>
+        <p>{kgData}</p>
+        <p>{kCalData}</p>
       </div>
-    )
+    );
   }
 
-  return null
+  return null;
 }
 
 function Barchart({ sessionsData }) {
   return (
     <>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={sessionsData} barCategoryGap="35%">
+      <ResponsiveContainer width="100%" height="100%" className={"bar-chart"}>
+        <p className="bar-chart--title">Activité quotidienne</p>
+        <BarChart data={sessionsData} barCategoryGap="35%" className={"bar-chart--chart"}>
           <Legend
             verticalAlign="top"
             align="right"
@@ -48,6 +49,7 @@ function Barchart({ sessionsData }) {
             axisLine={false}
             dataKey="Calories brûlées (kCal)"
             tickLine={false}
+            padding={{ top: 20 }}
           />
           <Tooltip content={<CustomTooltip />} />
 
