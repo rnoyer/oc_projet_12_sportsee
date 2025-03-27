@@ -7,7 +7,7 @@ export async function getDataActivityInfos(userId) {
     return activityMocked;
   }
 
-  const url = `http://localhost:3000/user/${userId}/activity`
+  const url = `http://localhost:3000/user/${userId}/activity`;
   const response = await fetch(url);
   const data = await response.json();
   return data;

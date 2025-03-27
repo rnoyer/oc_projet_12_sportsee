@@ -1,14 +1,20 @@
 import "./Hero.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { DataModel } from "../../models/dataModel";
 import { useUserInfos } from "/src/hooks/useUserInfos";
 import { useParams } from "react-router";
 
-function Hero() {
-  const params = useParams()
-  const { userName, getUserInfos } = useUserInfos(params.userId);
+function Hero({ userID }) {
+  const [userName, setUserName] = useState();
+  // const { userName, getUserInfos } = useUserInfos(userID);
 
   useEffect(() => {
-    getUserInfos();
+    // getUserInfos();
+    const fetchData = async () => {
+      const dataModel = new DataModel();
+      setUserName("Bob");
+    };
+    fetchData();
   }, []);
 
   return (
