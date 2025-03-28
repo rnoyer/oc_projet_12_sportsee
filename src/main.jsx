@@ -6,8 +6,6 @@ import App from "./pages/App.jsx";
 import Home from "./pages/Home.jsx";
 import Err404 from "./pages/Err404.jsx";
 
-const validUserID = ["12", "18"];
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

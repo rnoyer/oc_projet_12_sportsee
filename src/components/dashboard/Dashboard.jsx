@@ -11,12 +11,6 @@ import apple from "/src/assets/icons/apple.svg";
 import burger from "/src/assets/icons/burger.svg";
 import { useState, useEffect } from "react";
 import { DataModel } from "../../models/dataModel";
-import { data } from "react-router";
-// import { useUserInfos } from "/src/hooks/useUserInfos.js";
-// import { useActivityInfos } from "/src/hooks/useActivityInfos.js";
-// import { useAverageSessionInfos } from "../../hooks/useAverageSessionInfos";
-// import { usePerformanceInfos } from "../../hooks/usePerformanceInfos";
-import DataSourceSelector from "./DataSourceSelector";
 
 function Dashboard({ userID }) {
   const [activitySessions, setActivitySessions] = useState();
@@ -27,34 +21,21 @@ function Dashboard({ userID }) {
   const [proteinCount, setProteinCount] = useState();
   const [carbohydrateCount, setCarbohydrateCount] = useState();
   const [lipidCount, setLipidCount] = useState();
-  // const {
-  //   todayScore,
-  //   calorieCount,
-  //   proteinCount,
-  //   carbohydrateCount,
-  //   lipidCount,
-  //   getUserInfos,
-  // } = useUserInfos(userID);
-  // const { activitySessions, getActivityInfos } = useActivityInfos(userID);
-  // const { averageSessions, getAverageSessionInfos } =
-  //   useAverageSessionInfos(userID);
-  // const { performanceInfos, getPerformanceInfos } = usePerformanceInfos(userID);
 
   useEffect(() => {
-    // getUserInfos();
-    // getActivityInfos();
-    // getAverageSessionInfos();
-    // getPerformanceInfos();
     const fetchData = async () => {
       const dataModel = new DataModel();
+
       setActivitySessions(await dataModel.getActivityInfos(userID));
       setAverageSessions(await dataModel.getAverageSessionInfos(userID));
       setPerformanceInfos(await dataModel.getPerformanceInfos(userID));
-      setTodayScore(30);
-      setCalorieCount(30);
-      setProteinCount(30);
-      setCarbohydrateCount(30);
-      setLipidCount(30);
+      setTodayScore((await dataModel.getUserInfos(userID)).todayScore);
+      setCalorieCount((await dataModel.getUserInfos(userID)).calorieCount);
+      setProteinCount((await dataModel.getUserInfos(userID)).proteinCount);
+      setCarbohydrateCount(
+        (await dataModel.getUserInfos(userID)).carbohydrateCount
+      );
+      setLipidCount((await dataModel.getUserInfos(userID)).lipidCount);
     };
     fetchData();
   }, []);
@@ -63,9 +44,6 @@ function Dashboard({ userID }) {
     <div className="dash">
       <div className="dash--hero">
         <Hero userID={userID} />
-      </div>
-      <div className="dash--selector">
-        <DataSourceSelector />
       </div>
       <div className="dash--bar-chart">
         <Barchart sessionsData={activitySessions} />

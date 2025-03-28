@@ -5,18 +5,46 @@ import { userInfosMocked } from "../../public/mockedData";
 
 export class MockData {
   async activityInfosData() {
-    return activityMocked;
+    try {
+      return activityMocked;
+    } catch (error) {
+      console.error(
+        "Problème survenu lors de la récupération des données mockés \n",
+        error
+      );
+    }
   }
 
   async averageSessionInfosData() {
-    return averageSessionsMocked;
+    try {
+      return averageSessionsMocked;
+    } catch (error) {
+      console.error(
+        "Problème survenu lors de la récupération des données mockés \n",
+        error
+      );
+    }
   }
 
   async performanceInfosData() {
-    return performanceMocked;
+    try {
+      return performanceMocked;
+    } catch (error) {
+      console.error(
+        "Problème survenu lors de la récupération des données mockés \n",
+        error
+      );
+    }
   }
 
   async userInfosData() {
-    return userInfosMocked;
+    try {
+      return userInfosMocked;
+    } catch (error) {
+      console.error(
+        "Problème survenu lors de la récupération des données mockés \n",
+        error
+      );
+    }
   }
 }
